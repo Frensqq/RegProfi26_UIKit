@@ -24,4 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "RegProfi26_UIKit"
 include(":app")
- 
+include(":UiKit")
