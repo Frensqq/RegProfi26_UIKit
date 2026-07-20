@@ -73,7 +73,15 @@ fun testButtons(){
         ButtonChips("Мужское", {}, false)
         SpacerH(5)
         ButtonCart("Популярное", 200,{}, true)
- 
+        SpacerH(5)
+        ButtonMedium("Популярное", {}, true, true)
+        SpacerH(5)
+        ButtonMedium("Популярное", {}, false, true)
+        SpacerH(5)
+        ButtonMedium("Популярное", {}, true, false)
+        SpacerH(5)
+        ButtonMedium("Популярное", {}, false, false)
+
     }
 
 }
