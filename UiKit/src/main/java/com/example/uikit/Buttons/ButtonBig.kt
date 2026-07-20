@@ -15,6 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.uikit.Bubbles.ButtonExit
+import com.example.uikit.Bubbles.ButtonMessage
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.MatuleTypography
 import com.example.uikit.UI.SpacerH
@@ -81,7 +83,10 @@ fun testButtons(){
         ButtonMedium("Популярное", {}, true, false)
         SpacerH(5)
         ButtonMedium("Популярное", {}, false, false)
-
+        SpacerH(5)
+        ButtonExit({})
+        SpacerH(5)
+        ButtonMessage({})
     }
 
 }
