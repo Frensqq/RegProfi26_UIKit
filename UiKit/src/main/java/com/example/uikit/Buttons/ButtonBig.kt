@@ -67,6 +67,10 @@ fun testButtons(){
         ButtonSmall("tset2", {}, true)
         SpacerH(5)
         ButtonSmall("tset2", {}, false)
+        SpacerH(5)
+        ButtonChips("Популярное", {}, true)
+        SpacerH(5)
+        ButtonChips("Мужское", {}, false)
 
     }
 
