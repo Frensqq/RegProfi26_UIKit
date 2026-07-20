@@ -7,6 +7,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.uikit.R
 
+
 data class MatuleTypography(
     val title1Semibold: TextStyle,
     val title1Heavy: TextStyle,
