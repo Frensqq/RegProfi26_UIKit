@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.uikit.Bubbles.ButtonExit
 import com.example.uikit.Bubbles.ButtonMessage
+import com.example.uikit.Controls.Counter
 import com.example.uikit.Controls.Toggle
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.MatuleTypography
@@ -96,6 +97,9 @@ fun testButtons(){
         var stateToggle by remember { mutableStateOf(false) }
         SpacerH(5)
         Toggle(stateToggle,{stateToggle = it})
+        var buttonControl by remember { mutableStateOf(1) }
+        SpacerH(5)
+        Counter(buttonControl) {buttonControl=it }
     }
 
 }
