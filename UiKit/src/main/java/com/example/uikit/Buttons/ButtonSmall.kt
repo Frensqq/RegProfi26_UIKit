@@ -49,7 +49,7 @@ fun ButtonSmall(text: String,
     ) {
         Text(
             text,
-            style = createMatuleTypography().title3Semibold,
+            style = createMatuleTypography().captionSemibold,
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
         )
