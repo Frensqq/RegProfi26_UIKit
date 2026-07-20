@@ -4,57 +4,60 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 
 @Composable
 fun MatuleTheme(
     content: @Composable () -> Unit
 ) {
+    val colors = defaultMatuleColors
+
     val colorScheme = lightColorScheme(
-        primary = MatuleColor.Accent,
-        onPrimary = MatuleColor.White,
-        secondary = MatuleColor.AccentInactive,
-        background = MatuleColor.White,
-        surface = MatuleColor.InputBg,
-        error = MatuleColor.Error,
-        onBackground = MatuleColor.Black,
-        onSurface = MatuleColor.Black
+        primary = colors.accent,
+        onPrimary = colors.white,
+        secondary = colors.accentInactive,
+        background = colors.background,
+        surface = colors.surface,
+        error = colors.error,
+        onBackground = colors.onBackground,
+        onSurface = colors.onSurface
     )
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = createMaterialTypography(),
-        content = content
-    )
+    CompositionLocalProvider(
+        LocalMatuleColors provides colors
+    ) {
+        MaterialTheme(
+            colorScheme = colorScheme,
+            typography = createMaterialTypography(),
+            content = content
+        )
+    }
 }
 
 private fun createMaterialTypography(): Typography {
     val type = MatuleType
 
     return Typography(
-        //Крупные заголовки
         displayLarge = type.title1Heavy,
         displayMedium = type.title1Semibold,
         displaySmall = type.title2Heavy,
-
-
-        // Заголовки
         headlineLarge = type.title2Semibold,
         headlineMedium = type.title2Regular,
         headlineSmall = type.title3Semibold,
-
-        // Маленькие Заголовки
         titleLarge = type.title3Medium,
         titleMedium = type.title3Regular,
         titleSmall = type.headlineMedium,
-
-        // Основной текст
         bodyLarge = type.textMedium,
         bodyMedium = type.textRegular,
         bodySmall = type.captionSemibold,
-
-        // Подписи
         labelLarge = type.captionRegular,
         labelMedium = type.caption2Bold,
         labelSmall = type.caption2Regular
     )
+}
+
+object MatuleTheme {
+    val colors: MatuleColors
+        @Composable
+        get() = LocalMatuleColors.current
 }
