@@ -71,7 +71,6 @@ fun testButtons(){
         ButtonChips("Популярное", {}, true)
         SpacerH(5)
         ButtonChips("Мужское", {}, false)
-
     }
 
 }
