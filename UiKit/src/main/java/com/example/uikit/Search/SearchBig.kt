@@ -103,6 +103,7 @@ fun testButtons(){
 
         SearchBig("", "Test", {}) { }
         SearchBig("Test", "", {}) { }
+        Search("","tset", {},{}) { }
     }
 
 }
