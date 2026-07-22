@@ -97,11 +97,8 @@ fun Select(text: String, placeholder: String, value: List<String>, onChange:(Str
                     }
                 )
             }
-
         }
     }
-
-
 }
 
 
