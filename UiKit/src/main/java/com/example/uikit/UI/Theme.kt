@@ -23,6 +23,8 @@ fun MatuleTheme(
         onSurface = colors.onSurface
     )
 
+    val typography = createMaterialTypography()
+
     CompositionLocalProvider(
         LocalMatuleColors provides colors
     ) {

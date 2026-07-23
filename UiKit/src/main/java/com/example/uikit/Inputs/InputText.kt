@@ -122,14 +122,27 @@ fun Inputs(
 fun PreviewSelectDate(){
     var value by remember { mutableStateOf("") }
 
-    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center) {
+    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center,) {
 
         Inputs("test", " ", {},)
+        SpacerH(10)
         Inputs("", "test", {},"tset")
+        SpacerH(10)
+
         Inputs("", "test", {},null, true )
+        SpacerH(10)
+
         Inputs("test", "test", {},null, true )
+        SpacerH(10)
+
         Inputs("", "test", {},null, true, "Bad error" )
+        SpacerH(10)
+
         Inputs("test", "test", {},null, true,"Bad error" )
+        SpacerH(10)
+
+        InputsImage({})
+        InputsImage({}, state = true)
 
     }
 }
