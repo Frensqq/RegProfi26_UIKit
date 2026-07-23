@@ -60,4 +60,6 @@ object MatuleTheme {
     val colors: MatuleColors
         @Composable
         get() = LocalMatuleColors.current
+
+    val typography = createMaterialTypography()
 }
