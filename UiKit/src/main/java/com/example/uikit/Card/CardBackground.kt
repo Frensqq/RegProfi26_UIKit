@@ -15,17 +15,17 @@ import androidx.compose.ui.unit.dp
 import com.example.uikit.UI.MatuleTheme
 
 @Composable
-fun CardBackground(content: Composable){
+fun CardBackground(content: @Composable () -> Unit){
 
     Box(
         modifier = Modifier
             .fillMaxWidth()
             .height(138.dp)
             .clip(RoundedCornerShape(12.dp))
-            .background(MatuleTheme.colors.white)
             .dropShadow(shape = RoundedCornerShape(12.dp), shadow = Shadow(1.dp))
+            .background(MatuleTheme.colors.white)
     ) {
-        content
+        content()
     }
 
 }
