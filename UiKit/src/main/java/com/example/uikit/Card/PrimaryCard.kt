@@ -39,7 +39,7 @@ fun PrimaryCard(title: String, type: String, cost: String, state: Boolean, onCli
                         Text(type,
                             maxLines = 1,
                             style = createMatuleTypography().captionSemibold,
-                            color = Color(0xff939396)
+                            color = MatuleTheme.colors.placeholder
                             )
                         SpacerH(4)
                         Text("$cost ₽", maxLines = 1, style = createMatuleTypography().title3Semibold, color = MatuleTheme.colors.black)
