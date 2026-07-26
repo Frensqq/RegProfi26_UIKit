@@ -20,14 +20,15 @@ import com.example.uikit.UI.createMatuleTypography
 fun ButtonChips(text: String,
                 onClick: () -> Unit,
                 state: Boolean = true,
-                enabled: Boolean = true
+                enabled: Boolean = true,
+                width: Int? = null
 
 ){
     val color = MatuleTheme.colors
     Button(
         onClick = onClick,
         enabled = enabled,
-        modifier = Modifier.height(48.dp),
+        modifier = if(width == null) Modifier.height(48.dp) else Modifier.height(48.dp).width(width.dp) ,
         shape = RoundedCornerShape(10.dp),
         colors = if (state) {
             ButtonColors(
