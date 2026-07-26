@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,7 +30,7 @@ fun PrimaryCard(title: String, type: String, cost: String, state: Boolean, onCli
     var localState by remember { mutableStateOf(state) }
     CardBackground(
         content = {
-            Column(modifier = Modifier.fillMaxSize().padding(16.dp),
+            Column(modifier = Modifier.fillMaxWidth().height(136.dp).padding(16.dp),
                 verticalArrangement = Arrangement.SpaceBetween) {
                 Text(title, maxLines = 2, style = createMatuleTypography().headlineMedium , color = MatuleTheme.colors.black)
                 Row(modifier = Modifier.fillMaxWidth(),

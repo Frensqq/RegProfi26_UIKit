@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -30,7 +31,7 @@ import com.example.uikit.UI.createMatuleTypography
 fun OrderCard(number: String, cost: String, date: String, state: String, onClick:()->Unit){
 
     CardBackground {
-        Column(modifier = Modifier.fillMaxSize().padding(16.dp), verticalArrangement = Arrangement.SpaceBetween) {
+        Column(modifier = Modifier.fillMaxWidth().height(116.dp).padding(16.dp), verticalArrangement = Arrangement.SpaceBetween) {
 
             Column() {
                 Row(
@@ -95,9 +96,6 @@ fun OrderCard(number: String, cost: String, date: String, state: String, onClick
                     color = MatuleTheme.colors.placeholder
                 )
             }
-
-
-
         }
     }
 
