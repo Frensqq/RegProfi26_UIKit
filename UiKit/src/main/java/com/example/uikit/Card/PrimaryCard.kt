@@ -1,5 +1,6 @@
 package com.example.uikit.Card
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -26,33 +27,69 @@ import com.example.uikit.UI.SpacerH
 import com.example.uikit.UI.createMatuleTypography
 
 @Composable
-fun PrimaryCard(title: String, type: String, cost: String, state: Boolean, onClick:()->Unit){
-    var localState by remember { mutableStateOf(state) }
+fun PrimaryCard(
+    title: String,
+    type: String,
+    cost: String,
+    state: Boolean,
+    onClick: () -> Unit,
+    openCard: () -> Unit,
+    isProject: Boolean
+) {
     CardBackground(
         content = {
-            Column(modifier = Modifier.fillMaxWidth().height(136.dp).padding(16.dp),
-                verticalArrangement = Arrangement.SpaceBetween) {
-                Text(title, maxLines = 2, style = createMatuleTypography().headlineMedium , color = MatuleTheme.colors.black)
-                Row(modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Column() {
-                        Text(type,
-                            maxLines = 1,
-                            style = createMatuleTypography().captionSemibold,
-                            color = MatuleTheme.colors.placeholder
-                            )
-                        SpacerH(4)
-                        Text("$cost ₽", maxLines = 1, style = createMatuleTypography().title3Semibold, color = MatuleTheme.colors.black)
-                    }
-                    ButtonSmall(text = if (localState) "Добавить" else "Убрать",
-                        {
-                            localState = !localState
-                            onClick()
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(136.dp)
+                    .clickable(onClick = {
+                        if(!isProject){
+                            openCard()
                         }
-                        ,state = localState)
-                }
+                    })
+                    .padding(16.dp),
+                verticalArrangement = Arrangement.SpaceBetween
+            ) {
 
+                Text(
+                    text = title,
+                    maxLines = 2,
+                    style = createMatuleTypography().headlineMedium,
+                    color = MatuleTheme.colors.black
+                )
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.Bottom
+                ) {
+
+                    Column {
+                        if (!isProject) {
+                            Text(
+                                text = type,
+                                maxLines = 1,
+                                style = createMatuleTypography().captionSemibold,
+                                color = MatuleTheme.colors.placeholder
+                            )
+                        }
+
+                        SpacerH(4)
+
+                        Text(
+                            text = if (!isProject) "$cost ₽" else cost,
+                            maxLines = 1,
+                            style = createMatuleTypography().title3Semibold,
+                            color = MatuleTheme.colors.black
+                        )
+                    }
+
+                    ButtonSmall(
+                        text = if(!isProject) {if(state) "Добавить" else "Убрать"} else{"Открыть"},
+                        onClick = onClick,
+                        state = state
+                    )
+                }
             }
         }
     )
@@ -62,6 +99,6 @@ fun PrimaryCard(title: String, type: String, cost: String, state: Boolean, onCli
 @Composable
 fun CardPreview(){
     Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-        PrimaryCard("Рубашка Воскресенье для машинного вязания", "Мужская одежда", "300", true, {})
+        PrimaryCard("Рубашка Воскресенье для машинного вязания", "Мужская одежда", "300", false, {}, {}, true)
     }
 }

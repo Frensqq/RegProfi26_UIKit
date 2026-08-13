@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -71,11 +73,11 @@ fun InputInt(
             unfocusedPlaceholderColor = Color(0xff939396),
             errorBorderColor = color.accent
         ),
-        placeholder ={Text(placeholder, style = createMatuleTypography().textRegular)},
+
+        placeholder ={Text(placeholder, style = createMatuleTypography().textRegular.copy(textAlign = TextAlign.Center))},
         modifier = Modifier
             .size(48.dp)
-            .focusRequester(focusRequester)
-            .fillMaxSize(),
+            .focusRequester(focusRequester) ,
         shape = androidx.compose.foundation.shape.RoundedCornerShape(10.dp),
         textStyle = createMatuleTypography().textRegular.copy(textAlign = TextAlign.Center),
     )
@@ -98,6 +100,5 @@ fun PreviewInputInt() {
                 focuses = focuses
             )
         }
-        Text(text = values.toString())
     }
 }

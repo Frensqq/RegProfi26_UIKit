@@ -32,7 +32,7 @@ fun TabBar(home: ()-> Unit, catalog: () -> Unit, orders: () -> Unit, profile: ()
     Column(
         Modifier.fillMaxWidth().height(88.dp)
     ) {
-        Box(Modifier.fillMaxWidth().height(1.dp).background(MatuleTheme.colors.description))
+        Box(Modifier.fillMaxWidth().height(1.dp).background(MatuleTheme.colors.placeholder))
 
         SpacerH(8)
 
@@ -41,24 +41,28 @@ fun TabBar(home: ()-> Unit, catalog: () -> Unit, orders: () -> Unit, profile: ()
             horizontalArrangement = Arrangement.SpaceBetween
         ){
             TabBarItem({
+                home()
                 currentState = it
             }, painterResource(R.drawable.home),
                 text = "Главная",
                 state = "Главная" == currentState
                 )
             TabBarItem({
+                catalog()
                 currentState = it
             }, painterResource(R.drawable.catalog),
                 text = "Каталог",
                 state = "Каталог" == currentState
                 )
             TabBarItem({
+                orders()
                 currentState = it
             }, painterResource(R.drawable.orders),
                 text = "Заказы",
                 state = "Заказы" == currentState
                 )
             TabBarItem({
+                profile()
                 currentState = it
             }, painterResource(R.drawable.profile),
                 text = "Профиль",

@@ -1,10 +1,12 @@
 package com.example.uikit.Search
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -25,6 +27,7 @@ import com.example.uikit.UI.createMatuleTypography
 fun Search(text: String, placeholder: String,onChange: (String) -> Unit,onClick:() -> Unit , cansel: () -> Unit){
     Row(
         Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
 
@@ -78,12 +81,10 @@ fun Search(text: String, placeholder: String,onChange: (String) -> Unit,onClick:
                 )
         )
 
-        TextButton(
-            onClick = cansel
-        ) {
-            Text("Отменить", style = createMatuleTypography().captionRegular, color = color.accent)
-        }
-
+        Icon(painterResource(R.drawable.shopping_cart),
+            contentDescription = null, tint = MatuleTheme.colors.accent,
+            modifier = Modifier.clickable(onClick = {cansel()}).
+            padding(horizontal = 23.dp))
 
     }
 }
