@@ -15,6 +15,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleColors
 import com.example.uikit.UI.MatuleTheme
 
@@ -23,9 +24,9 @@ fun ButtonExit(onClick: () -> Unit){
     val color = MatuleTheme.colors
     Box(
         modifier = Modifier
-            .size(32.dp)
+            .size(Dimensions.IconMedium)
             .clickable{onClick()}
-            .clip(RoundedCornerShape(8.dp))
+            .clip(RoundedCornerShape(Dimensions.SmallRounded))
             .background(color.surface)
         , contentAlignment = Alignment.Center
     ) {
