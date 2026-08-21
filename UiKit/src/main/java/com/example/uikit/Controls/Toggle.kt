@@ -16,6 +16,7 @@ import androidx.compose.ui.draw.DropShadowScope
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.unit.dp
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 
 @Composable
@@ -23,11 +24,11 @@ fun Toggle(state: Boolean, onClick: (Boolean) -> Unit){
     val color = MatuleTheme.colors
     Row(
         modifier = Modifier
-            .width(48.dp)
-            .height(28.dp)
+            .width(Dimensions.SmallBoxWidth)
+            .height(Dimensions.SmallBoxHeight)
             .clip(CircleShape)
             .background(if (state) color.accent else color.inputStroke)
-            .padding(4.dp),
+            .padding(Dimensions.SmallCardPadding),
         horizontalArrangement = if (!state) Arrangement.Start else Arrangement.End
 
     ) {
@@ -37,7 +38,6 @@ fun Toggle(state: Boolean, onClick: (Boolean) -> Unit){
                .clip(CircleShape)
                .background(color.white)
                .clickable{onClick(!state)}
-               //.shadow(shape = CircleShape, elevation = 2.dp, ambientColor = color.black.copy(alpha = 0.15f))
         )
     }
 

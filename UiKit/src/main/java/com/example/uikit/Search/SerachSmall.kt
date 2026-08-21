@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.createMatuleTypography
 
@@ -24,8 +25,8 @@ fun SearchSmall(text: String, placeholder: String,onChange: (String) -> Unit,onC
 
         value = text,
         onValueChange = {onChange(it)},
-        modifier = Modifier.width(265.dp).height(48.dp),
-        shape = RoundedCornerShape(10.dp),
+        modifier = Modifier.width(Dimensions.RowWidth).height(Dimensions.LargeRowHeight),
+        shape = RoundedCornerShape(Dimensions.MediumRounded),
         placeholder = {
             Text(
                 text = placeholder,

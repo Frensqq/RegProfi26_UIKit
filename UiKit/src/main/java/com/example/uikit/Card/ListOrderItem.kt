@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.createMatuleTypography
 import java.nio.file.WatchEvent
@@ -16,13 +17,13 @@ import java.nio.file.WatchEvent
 @Composable
 fun ListOrderItem(data: OrderCardItem){
     Row(
-        modifier = Modifier.fillMaxWidth().height(40.dp),
+        modifier = Modifier.fillMaxWidth().height(Dimensions.RowHeight),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.Top
     ) {
         Text(
             data.title,
-            modifier = Modifier.fillMaxWidth(0.7f),
+            modifier = Modifier.fillMaxWidth(Dimensions.SmallfillMaxWidth),
             style = createMatuleTypography().captionRegular,
             color = MatuleTheme.colors.black,
             maxLines = 2

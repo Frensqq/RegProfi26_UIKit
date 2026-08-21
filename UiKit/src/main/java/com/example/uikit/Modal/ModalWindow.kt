@@ -24,6 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.uikit.Buttons.ButtonBig
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.SpacerH
 import com.example.uikit.UI.createMatuleTypography
@@ -41,15 +42,15 @@ fun ModalWindow(
 
     Box(Modifier.fillMaxSize()
         .clickable(onClick = {closeWin()})
-        .background(MatuleTheme.colors.black.copy(alpha = 0.6f))
-,        contentAlignment = Alignment.BottomCenter) {
+        .background(MatuleTheme.colors.black.copy(alpha = Dimensions.SmallfillMaxWidth)),
+        contentAlignment = Alignment.BottomCenter) {
 
-        Column(Modifier.clip(RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp)).background(
-            MatuleTheme.colors.white).padding(horizontal = 20.dp)
+        Column(Modifier.clip(RoundedCornerShape(topStart = Dimensions.LargePadding, topEnd = Dimensions.LargePadding)).background(
+            MatuleTheme.colors.white).padding(horizontal = Dimensions.ScreenPadding)
         ) {
 
 
-            SpacerH(24)
+            SpacerH(Dimensions.LargeSpacing)
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
@@ -58,13 +59,13 @@ fun ModalWindow(
                 Text(
                     text = title,
                     maxLines = 2,
-                    modifier = Modifier.fillMaxWidth(0.8f),
+                    modifier = Modifier.fillMaxWidth(Dimensions.fillMaxWidth),
                     style = createMatuleTypography().title2Semibold,
                     color = MatuleTheme.colors.black
                 )
 
 
-                Box(Modifier.size(24.dp).clip(CircleShape)
+                Box(Modifier.size(Dimensions.BoxSize).clip(CircleShape)
                     .background(MatuleTheme.colors.inputIcon),
                     contentAlignment = Alignment.Center) {
 
@@ -79,41 +80,41 @@ fun ModalWindow(
 
             }
 
-            SpacerH(20)
+            SpacerH(Dimensions.ScreenPadding)
 
             Text("Описание",
                 style = createMatuleTypography().headlineMedium,
                 color = MatuleTheme.colors.placeholder)
 
-            SpacerH(8)
+            SpacerH(Dimensions.SmallSpacing)
 
             Text(description,
                 style = createMatuleTypography().textRegular,
                 color = MatuleTheme.colors.black
             )
 
-            SpacerH( 50)
-            SpacerH(13)
+            SpacerH(Dimensions.BigSpacing)
+            SpacerH(Dimensions.MediumSpacing)
 
             Text("Примерный расход",
                 style = createMatuleTypography().captionRegular,
                 color = MatuleTheme.colors.placeholder
                 )
-            SpacerH(4)
+            SpacerH(Dimensions.ExtraSmallSpacing)
 
             Text(text,
                 style = createMatuleTypography().headlineMedium,
                 color = MatuleTheme.colors.placeholder
             )
 
-            SpacerH(19)
+            SpacerH(Dimensions.ScreenPadding)
 
             ButtonBig("Добавить за $cost ₽", {
                 onClickButton()
             },state
                 )
 
-            SpacerH(20)
+            SpacerH(Dimensions.ScreenPadding)
 
 
         }

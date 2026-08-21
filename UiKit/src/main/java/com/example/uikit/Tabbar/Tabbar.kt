@@ -22,6 +22,7 @@ import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.SpacerH
 
@@ -30,14 +31,14 @@ fun TabBar(home: ()-> Unit, catalog: () -> Unit, orders: () -> Unit, profile: ()
 
     var currentState by remember { mutableStateOf(current) }
     Column(
-        Modifier.fillMaxWidth().height(88.dp)
+        Modifier.fillMaxWidth().height(Dimensions.BottomBarSpacing)
     ) {
-        Box(Modifier.fillMaxWidth().height(1.dp).background(MatuleTheme.colors.placeholder))
+        Box(Modifier.fillMaxWidth().height(Dimensions.SmallBorder).background(MatuleTheme.colors.placeholder))
 
-        SpacerH(8)
+        SpacerH(Dimensions.SmallSpacing)
 
         Row(
-            Modifier.fillMaxWidth().padding(start = 7.dp, end = 8.dp),
+            Modifier.fillMaxWidth().padding(start = Dimensions.ExtraSmallPadding, end = Dimensions.ExtraSmallPaddingPlus),
             horizontalArrangement = Arrangement.SpaceBetween
         ){
             TabBarItem({

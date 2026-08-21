@@ -23,6 +23,7 @@ import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.createMatuleTypography
 import kotlinx.coroutines.CoroutineScope
@@ -76,9 +77,9 @@ fun InputInt(
 
         placeholder ={Text(placeholder, style = createMatuleTypography().textRegular.copy(textAlign = TextAlign.Center))},
         modifier = Modifier
-            .size(48.dp)
+            .size(Dimensions.HeaderHeight)
             .focusRequester(focusRequester) ,
-        shape = androidx.compose.foundation.shape.RoundedCornerShape(10.dp),
+        shape = androidx.compose.foundation.shape.RoundedCornerShape(Dimensions.MediumRounded),
         textStyle = createMatuleTypography().textRegular.copy(textAlign = TextAlign.Center),
     )
 }

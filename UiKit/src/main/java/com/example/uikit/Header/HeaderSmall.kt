@@ -15,6 +15,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.uikit.Bubbles.ButtonExit
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.SpacerH
 import com.example.uikit.UI.createMatuleTypography
@@ -28,7 +29,7 @@ fun HeaderSmall(
     Column(modifier = Modifier.fillMaxWidth()) {
 
         ButtonExit { Exit() }
-        SpacerH(24)
+        SpacerH(Dimensions.LargePadding)
         Row(modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {

@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import com.example.uikit.Buttons.ButtonSmall
 import com.example.uikit.Controls.Counter
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.SpacerH
 import com.example.uikit.UI.SpacerW
@@ -39,8 +40,8 @@ fun CardCart(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(136.dp)
-                    .padding(16.dp),
+                    .height(Dimensions.ProductCardHeight)
+                    .padding(Dimensions.MediumPadding),
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
                 Row(
@@ -51,7 +52,7 @@ fun CardCart(
                     Text(
                         text = title,
                         maxLines = 2,
-                        modifier = Modifier.fillMaxWidth(0.8f),
+                        modifier = Modifier.fillMaxWidth(Dimensions.fillMaxWidth),
                         style = createMatuleTypography().headlineMedium,
                         color = MatuleTheme.colors.black
                     )
@@ -72,17 +73,17 @@ fun CardCart(
                     Text(
                         "$cost ₽",
                         style = createMatuleTypography().title3Medium,
-                        modifier = Modifier.padding(bottom = 4.dp),
+                        modifier = Modifier.padding(bottom = Dimensions.SmallCardPadding),
                         color = MatuleTheme.colors.black)
 
                     Row(verticalAlignment = Alignment.Bottom) {
                         Text(
                             "$count шт",
                             style = createMatuleTypography().textMedium,
-                            modifier = Modifier.padding(bottom = 6.dp),
+                            modifier = Modifier.padding(bottom = Dimensions.CardPadding),
                             color = MatuleTheme.colors.black)
 
-                        SpacerW(40)
+                        SpacerW(Dimensions.BigSpacing)
 
                         Counter(count.toInt()) {
                             changeCount(it)
