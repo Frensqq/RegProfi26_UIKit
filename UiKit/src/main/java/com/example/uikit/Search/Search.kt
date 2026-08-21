@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.createMatuleTypography
 
@@ -36,8 +37,8 @@ fun Search(text: String, placeholder: String,onChange: (String) -> Unit,onClick:
 
             value = text,
             onValueChange = {onChange(it)},
-            modifier = Modifier.fillMaxWidth(0.7f).height(48.dp),
-            shape = RoundedCornerShape(10.dp),
+            modifier = Modifier.fillMaxWidth(Dimensions.SmallfillMaxWidth).height(Dimensions.LargeRowHeight),
+            shape = RoundedCornerShape(Dimensions.MediumRounded),
             placeholder = {
                 Text(
                     text = placeholder,
@@ -84,7 +85,7 @@ fun Search(text: String, placeholder: String,onChange: (String) -> Unit,onClick:
         Icon(painterResource(R.drawable.shopping_cart),
             contentDescription = null, tint = MatuleTheme.colors.accent,
             modifier = Modifier.clickable(onClick = {cansel()}).
-            padding(horizontal = 23.dp))
+            padding(horizontal = Dimensions.SmallLargePadding))
 
     }
 }

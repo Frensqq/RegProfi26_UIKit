@@ -24,6 +24,7 @@ import com.example.uikit.Bubbles.ButtonExit
 import com.example.uikit.Bubbles.ButtonMessage
 import com.example.uikit.Controls.Counter
 import com.example.uikit.Controls.Toggle
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.MatuleTypography
 import com.example.uikit.UI.SpacerH
@@ -39,9 +40,9 @@ fun ButtonBig(
     Button(
         onClick = onClick,
         enabled = enabled,
-        modifier = Modifier.height(56.dp)
+        modifier = Modifier.height(Dimensions.ButtonHeight)
             .fillMaxWidth(),
-        shape = RoundedCornerShape(10.dp),
+        shape = RoundedCornerShape(Dimensions.MediumRounded),
         colors = ButtonColors(
             containerColor = color.accent,
             contentColor = color.white,
@@ -70,35 +71,35 @@ fun testButtons(){
         ) {
 
         ButtonBig("test", {}, true)
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         ButtonBig("tset2", {}, false)
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         ButtonSmall("tset2", {}, true)
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         ButtonSmall("tset2", {}, false)
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         ButtonChips("Популярное", {}, true)
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         ButtonChips("Мужское", {}, false)
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         ButtonCart("Популярное", 200,{}, true)
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         ButtonMedium("Популярное", {}, true, true)
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         ButtonMedium("Популярное", {}, false, true)
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         ButtonMedium("Популярное", {}, true, false)
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         ButtonMedium("Популярное", {}, false, false)
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         ButtonExit({})
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         ButtonMessage({})
         var stateToggle by remember { mutableStateOf(false) }
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         Toggle(stateToggle,{stateToggle = it})
         var buttonControl by remember { mutableStateOf(1) }
-        SpacerH(5)
+        SpacerH(Dimensions.ExtraSmallSpacing)
         Counter(buttonControl) {buttonControl=it }
     }
 

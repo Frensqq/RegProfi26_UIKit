@@ -23,10 +23,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.createMatuleTypography
+import java.io.DataInput
 
 @Composable
 fun InputsImage(
@@ -34,7 +37,6 @@ fun InputsImage(
 ){
 
     val color = MatuleTheme.colors
-    val typo = MatuleTheme.typography
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -43,11 +45,11 @@ fun InputsImage(
         if(painter == null && !state){
             Row(
                 modifier = Modifier.fillMaxWidth()
-                    .height(48.dp)
-                    .clip(RoundedCornerShape(10.dp))
+                    .height(Dimensions.LargeRowHeight)
+                    .clip(RoundedCornerShape(Dimensions.MediumRounded))
                     .background(color.surface)
-                    .border(1.dp, color.inputStroke)
-                    .padding(14.dp),
+                    .border(Dimensions.SmallBorder, color.inputStroke)
+                    .padding(Dimensions.SmallPadding),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -69,9 +71,9 @@ fun InputsImage(
         else{
             Box(modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 34.dp)
-                .height(172.dp)
-                .clip(RoundedCornerShape(10.dp))
+                .padding(horizontal = Dimensions.ExtraLargePadding)
+                .height(Dimensions.ExtraLargeBoxHeight)
+                .clip(RoundedCornerShape(Dimensions.MediumRounded))
                 .background(color.surface),
                 contentAlignment = Alignment.Center
             ) {
@@ -79,7 +81,7 @@ fun InputsImage(
                 Image(painter = painter?:
                     painterResource(R.drawable.default_product),
                     contentDescription = null,
-                    Modifier.fillMaxSize().padding(top = 22.dp, start = 5.dp, end = 6.dp, bottom = 18.dp),
+                    Modifier.fillMaxSize().padding(top = Dimensions.MediumPaddingPlus, start = Dimensions.ExtraSmallPadding, end = Dimensions.ExtraSmallPadding, bottom = Dimensions.MediumPaddingPlus),
                     contentScale = ContentScale.Fit
                     )
             }

@@ -14,6 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.uikit.Bubbles.ButtonExit
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.createMatuleTypography
 import java.nio.file.WatchEvent
@@ -28,7 +29,7 @@ fun Header(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 20.dp, end = 26.dp, bottom = 16.dp),
+            .padding(start = Dimensions.ScreenPadding, end = Dimensions.LargePaddingPlus, bottom = Dimensions.MediumPadding),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.Top
 
@@ -38,10 +39,10 @@ fun Header(
         Text(title,
             style = createMatuleTypography().title2Semibold,
             color = MatuleTheme.colors.black,
-            modifier = Modifier.padding(top = 2.dp)
+            modifier = Modifier.padding(top = Dimensions.ExtraSmallCardPadding)
         )
 
-        IconButton(onClick = {Delete()}, modifier = Modifier.padding(top = 6.dp)) {
+        IconButton(onClick = {Delete()}, modifier = Modifier.padding(top = Dimensions.CardPadding)) {
             Icon(painter = painterResource(R.drawable.delete),
                 contentDescription = null,
                 tint = MatuleTheme.colors.inputIcon)

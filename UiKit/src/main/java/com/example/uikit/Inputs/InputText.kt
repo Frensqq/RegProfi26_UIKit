@@ -29,6 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.uikit.R
 import com.example.uikit.Selects.SelectDate
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.SpacerH
 import com.example.uikit.UI.createMatuleTypography
@@ -50,7 +51,7 @@ fun Inputs(
                 style = createMatuleTypography().captionRegular,
                 color = MatuleTheme.colors.description
             )
-            SpacerH(8)
+            SpacerH(Dimensions.SmallSpacing)
         }
 
         val color = MatuleTheme.colors
@@ -66,8 +67,8 @@ fun Inputs(
                     color = Color(0xff939396)
                 )
             },
-            modifier = Modifier.height(48.dp).fillMaxWidth(),
-            shape = RoundedCornerShape(10.dp),
+            modifier = Modifier.height(Dimensions.LargeRowHeight).fillMaxWidth(),
+            shape = RoundedCornerShape(Dimensions.MediumRounded),
             colors = OutlinedTextFieldDefaults.colors(
                 focusedBorderColor = color.accent,
                 unfocusedBorderColor = color.inputIcon,
@@ -105,7 +106,7 @@ fun Inputs(
         )
 
         if(!isError.isNullOrEmpty()){
-            SpacerH(8)
+            SpacerH(Dimensions.SmallSpacing)
             Text(
                 text=isError,
                 style = createMatuleTypography().captionRegular,
@@ -125,21 +126,21 @@ fun PreviewSelectDate(){
     Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center,) {
 
         Inputs("test", " ", {},)
-        SpacerH(10)
+        SpacerH(Dimensions.MediumSpacing)
         Inputs("", "test", {},"tset")
-        SpacerH(10)
+        SpacerH(Dimensions.MediumSpacing)
 
         Inputs("", "test", {},null, true )
-        SpacerH(10)
+        SpacerH(Dimensions.MediumSpacing)
 
         Inputs("test", "test", {},null, true )
-        SpacerH(10)
+        SpacerH(Dimensions.MediumSpacing)
 
         Inputs("", "test", {},null, true, "Bad error" )
-        SpacerH(10)
+        SpacerH(Dimensions.MediumSpacing)
 
         Inputs("test", "test", {},null, true,"Bad error" )
-        SpacerH(10)
+        SpacerH(Dimensions.MediumSpacing)
 
         InputsImage({})
         InputsImage({}, state = true)

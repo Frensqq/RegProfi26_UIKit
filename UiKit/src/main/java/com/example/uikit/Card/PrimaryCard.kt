@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.uikit.Buttons.ButtonSmall
 import com.example.uikit.Tabbar.TabBar
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.SpacerH
 import com.example.uikit.UI.createMatuleTypography
@@ -41,13 +42,13 @@ fun PrimaryCard(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(136.dp)
+                    .height(Dimensions.ProductCardHeight)
                     .clickable(onClick = {
                         if(!isProject){
                             openCard()
                         }
                     })
-                    .padding(16.dp),
+                    .padding(Dimensions.MediumPadding),
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
 
@@ -74,7 +75,7 @@ fun PrimaryCard(
                             )
                         }
 
-                        SpacerH(4)
+                        SpacerH(Dimensions.ExtraSmallSpacing)
 
                         Text(
                             text = if (!isProject) "$cost ₽" else cost,

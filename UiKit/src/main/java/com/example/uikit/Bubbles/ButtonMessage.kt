@@ -13,6 +13,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 
 @Composable
@@ -20,9 +21,9 @@ fun ButtonMessage(onClick: () -> Unit){
     val color = MatuleTheme.colors
     Box(
         modifier = Modifier
-            .size(48.dp)
+            .size(Dimensions.IconLarge)
             .clickable{onClick()}
-            .clip(RoundedCornerShape(8.dp))
+            .clip(RoundedCornerShape(Dimensions.SmallRounded))
             .background(color.surface)
         , contentAlignment = Alignment.Center
     ) {

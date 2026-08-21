@@ -12,7 +12,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.createMatuleTypography
 
@@ -21,15 +23,15 @@ fun ButtonChips(text: String,
                 onClick: () -> Unit,
                 state: Boolean = true,
                 enabled: Boolean = true,
-                width: Int? = null
+                width: Dp? = null
 
 ){
     val color = MatuleTheme.colors
     Button(
         onClick = onClick,
         enabled = enabled,
-        modifier = if(width == null) Modifier.height(48.dp) else Modifier.height(48.dp).width(width.dp) ,
-        shape = RoundedCornerShape(10.dp),
+        modifier = if(width == null) Modifier.height(Dimensions.ChipsHeight) else Modifier.height(Dimensions.ChipsHeight).width(width) ,
+        shape = RoundedCornerShape(Dimensions.MediumRounded),
         colors = if (state) {
             ButtonColors(
             containerColor = color.accent,
@@ -45,7 +47,7 @@ fun ButtonChips(text: String,
                 disabledContentColor = color.description
             )
         },
-        contentPadding = PaddingValues(14.dp)
+        contentPadding = PaddingValues(Dimensions.SmallPadding)
     ) {
         Text(
             text,

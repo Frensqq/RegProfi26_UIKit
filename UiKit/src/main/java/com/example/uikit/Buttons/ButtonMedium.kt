@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.createMatuleTypography
 
@@ -25,9 +26,9 @@ fun ButtonMedium(
     Button(
         onClick = onClick,
         enabled = enabled,
-        modifier = Modifier.height(48.dp)
+        modifier = Modifier.height(Dimensions.ChipsHeight)
             .fillMaxWidth(),
-        shape = RoundedCornerShape(10.dp),
+        shape = RoundedCornerShape(Dimensions.MediumRounded),
         colors = if (state) ButtonColors(
             containerColor = color.accent,
             contentColor = color.white,
@@ -42,7 +43,7 @@ fun ButtonMedium(
                 disabledContentColor = color.description
             )
              },
-        border = if(!state && enabled) BorderStroke(1.dp, color.accent) else null
+        border = if(!state && enabled) BorderStroke(Dimensions.SmallBorder, color.accent) else null
     ) {
         Text(
             text,

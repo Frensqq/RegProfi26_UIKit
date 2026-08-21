@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.unit.dp
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.createMatuleTypography
 
@@ -20,7 +21,7 @@ import com.example.uikit.UI.createMatuleTypography
 fun TabBarItem(OnClick: (String) -> Unit, icon: Painter, text: String, state: Boolean){
 
     Column(
-        modifier = Modifier.height(49.dp).width(79.dp).padding(bottom = 1.dp)
+        modifier = Modifier.height(Dimensions.LargeBoxHeight).width(Dimensions.LargeBoxWidth).padding(bottom = Dimensions.SmallBorder)
             .clickable{OnClick(text)},
         verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally

@@ -16,6 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.SpacerW
 import com.example.uikit.UI.createMatuleTypography
@@ -31,16 +32,16 @@ fun ButtonCart(
     Button(
         onClick = onClick,
         enabled = enabled,
-        modifier = Modifier.height(56.dp)
+        modifier = Modifier.height(Dimensions.ButtonHeight)
             .fillMaxWidth(),
-        shape = RoundedCornerShape(10.dp),
+        shape = RoundedCornerShape(Dimensions.MediumRounded),
         colors = ButtonColors(
             containerColor = color.accent,
             contentColor = color.white,
             disabledContainerColor = color.accentInactive,
             disabledContentColor = color.white
         ),
-        contentPadding = PaddingValues(16.dp)
+        contentPadding = PaddingValues(Dimensions.MediumPadding)
     ) {
         Row(
             Modifier.fillMaxWidth(),
@@ -53,7 +54,7 @@ fun ButtonCart(
                     contentDescription = null,
                     tint = color.white
                     )
-                SpacerW(16)
+                SpacerW(Dimensions.MediumSpacing)
                 Text(
                     text,
                     style = createMatuleTypography().title3Semibold,

@@ -17,20 +17,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.uikit.Buttons.ButtonChips
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.SpacerW
 
 @Composable
 fun CategoryMenu(category: List<String>,currentCategory: String, onClick: (String) -> Unit ){
 
     LazyRow(
-        modifier = Modifier.fillMaxWidth().height(48.dp),
-        horizontalArrangement = Arrangement.spacedBy(16.dp)
+        modifier = Modifier.fillMaxWidth().height(Dimensions.ChipsHeight),
+        horizontalArrangement = Arrangement.spacedBy(Dimensions.MediumSpacing)
     ) {
-        item { SpacerW(4) }
+        item { SpacerW(Dimensions.ExtraSmallSpacing) }
         items(category){
             ButtonChips(it, {onClick(it)}, it == currentCategory)
         }
-        item { SpacerW(4) }
+        item { SpacerW(Dimensions.ExtraSmallSpacing) }
     }
 }
 

@@ -32,6 +32,7 @@ import com.example.uikit.Buttons.ButtonSmall
 import com.example.uikit.Controls.Counter
 import com.example.uikit.Controls.Toggle
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.MatuleTypography
 import com.example.uikit.UI.SpacerH
@@ -44,8 +45,8 @@ fun SearchBig(text: String, placeholder: String,onChange: (String) -> Unit,onCli
 
         value = text,
         onValueChange = {onChange(it)},
-        modifier = Modifier.fillMaxWidth().height(48.dp),
-        shape = RoundedCornerShape(10.dp),
+        modifier = Modifier.fillMaxWidth().height(Dimensions.LargeRowHeight),
+        shape = RoundedCornerShape(Dimensions.MediumRounded),
         placeholder = {
             Text(
                 text = placeholder,

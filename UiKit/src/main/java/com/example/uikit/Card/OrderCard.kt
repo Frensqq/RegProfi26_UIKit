@@ -22,6 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.SpacerH
 import com.example.uikit.UI.SpacerW
@@ -31,7 +32,8 @@ import com.example.uikit.UI.createMatuleTypography
 fun OrderCard(number: String, cost: String, date: String, state: String, onClick:()->Unit){
 
     CardBackground {
-        Column(modifier = Modifier.fillMaxWidth().height(116.dp).padding(16.dp), verticalArrangement = Arrangement.SpaceBetween) {
+        Column(modifier = Modifier.fillMaxWidth().height(Dimensions.HeightCardMin).padding(
+            Dimensions.MediumPadding), verticalArrangement = Arrangement.SpaceBetween) {
 
             Column() {
                 Row(
@@ -48,13 +50,13 @@ fun OrderCard(number: String, cost: String, date: String, state: String, onClick
                     Text(
                         "$cost ₽",
                         maxLines = 1,
-                        modifier = Modifier.padding(top = 2.dp),
+                        modifier = Modifier.padding(top = Dimensions.ExtraSmallCardPadding),
                         style = createMatuleTypography().headlineRegular,
                         color = MatuleTheme.colors.black
                     )
                 }
 
-                SpacerH(8)
+                SpacerH(Dimensions.SmallSpacing)
 
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
@@ -63,12 +65,12 @@ fun OrderCard(number: String, cost: String, date: String, state: String, onClick
                         style = createMatuleTypography().captionRegular,
                         color = MatuleTheme.colors.placeholder
                     )
-                    SpacerW(6)
+                    SpacerW(Dimensions.CardPadding)
                     Box(
-                        modifier = Modifier.size(5.dp).clip(CircleShape)
+                        modifier = Modifier.size(Dimensions.SmallBoxSize).clip(CircleShape)
                             .background(MatuleTheme.colors.placeholder)
                     )
-                    SpacerW(6)
+                    SpacerW(Dimensions.CardPadding)
                     Text(
                         state,
                         maxLines = 1,
@@ -88,7 +90,7 @@ fun OrderCard(number: String, cost: String, date: String, state: String, onClick
                     contentDescription = null,
                     tint = MatuleTheme.colors.placeholder
                 )
-                SpacerW(8)
+                SpacerW(Dimensions.SmallSpacing)
                 Text(
                     "Посмотреть",
                     maxLines = 1,

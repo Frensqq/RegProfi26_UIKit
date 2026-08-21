@@ -13,6 +13,7 @@ import androidx.compose.ui.draw.dropShadow
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.shadow.Shadow
 import androidx.compose.ui.unit.dp
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 
 @Composable
@@ -21,9 +22,10 @@ fun CardBackground(content: @Composable () -> Unit){
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .heightIn(min = 116.dp, max = 537.dp)
-            .clip(RoundedCornerShape(12.dp))
-            .dropShadow(shape = RoundedCornerShape(12.dp), shadow = Shadow(1.dp))
+            .heightIn(min = Dimensions.HeightCardMin, max = Dimensions.HeightCardMax)
+            .clip(RoundedCornerShape(Dimensions.LargeRounded))
+            .dropShadow(shape = RoundedCornerShape(Dimensions.LargeRounded), shadow = Shadow(
+                Dimensions.SmallBorder))
             .background(MatuleTheme.colors.white)
     ) {
         content()

@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.createMatuleTypography
 
@@ -27,9 +28,9 @@ fun ButtonSmall(text: String,
     Button(
         onClick = onClick,
         enabled = enabled,
-        modifier = Modifier.height(40.dp)
-            .width(96.dp),
-        shape = RoundedCornerShape(10.dp),
+        modifier = Modifier.height(Dimensions.SmallButtonHeight)
+            .width(Dimensions.SmallButtonWidth),
+        shape = RoundedCornerShape(Dimensions.MediumRounded),
         colors = if (state) {ButtonColors(
             containerColor = color.accent,
             contentColor = color.white,
@@ -44,8 +45,8 @@ fun ButtonSmall(text: String,
                 disabledContentColor = color.accentInactive
             )
         },
-        border = BorderStroke(width = 1.dp, color =  color.accent),
-        contentPadding = PaddingValues(10.dp)
+        border = BorderStroke(width = Dimensions.SmallBorder, color =  color.accent),
+        contentPadding = PaddingValues(Dimensions.SmallBorder)
     ) {
         Text(
             text,

@@ -25,6 +25,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.SpacerH
 import com.example.uikit.UI.createMatuleTypography
@@ -42,15 +43,15 @@ fun Select(text: String, placeholder: String, value: List<String>, onChange:(Str
                 style = createMatuleTypography().captionRegular,
                 color = color.description
                 )
-            SpacerH(4)
+            SpacerH(Dimensions.ExtraSmallSpacing)
         }
 
         OutlinedTextField(
             readOnly = true,
             value = text,
             onValueChange = {},
-            modifier = Modifier.fillMaxWidth().height(48.dp),
-            shape = RoundedCornerShape(10.dp),
+            modifier = Modifier.fillMaxWidth().height(Dimensions.LargeRowHeight),
+            shape = RoundedCornerShape(Dimensions.MediumRounded),
             placeholder = {
                 Text(
                     text = placeholder,

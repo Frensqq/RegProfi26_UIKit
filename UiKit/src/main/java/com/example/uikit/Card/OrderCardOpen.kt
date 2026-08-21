@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import com.example.uikit.Buttons.ButtonChips
 import com.example.uikit.Buttons.ButtonMedium
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 import com.example.uikit.UI.SpacerH
 import com.example.uikit.UI.SpacerW
@@ -44,7 +45,7 @@ fun OrderCardOpen(number: String, cost: String, date: String, state: String, onC
     CardBackground {
         Column() {
             Column(
-                modifier = Modifier.height(137.dp).padding(16.dp),
+                modifier = Modifier.height(Dimensions.ProductCardHeight).padding(Dimensions.MediumPadding),
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
 
@@ -63,13 +64,13 @@ fun OrderCardOpen(number: String, cost: String, date: String, state: String, onC
                         Text(
                             "$cost ₽",
                             maxLines = 1,
-                            modifier = Modifier.padding(top = 2.dp),
+                            modifier = Modifier.padding(Dimensions.ExtraSmallCardPadding),
                             style = createMatuleTypography().headlineRegular,
                             color = MatuleTheme.colors.black
                         )
                     }
 
-                    SpacerH(8)
+                    SpacerH(Dimensions.SmallSpacing)
 
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
@@ -78,12 +79,12 @@ fun OrderCardOpen(number: String, cost: String, date: String, state: String, onC
                             style = createMatuleTypography().captionRegular,
                             color = MatuleTheme.colors.placeholder
                         )
-                        SpacerW(6)
+                        SpacerW(Dimensions.CardPadding)
                         Box(
-                            modifier = Modifier.size(5.dp).clip(CircleShape)
+                            modifier = Modifier.size(Dimensions.SmallBoxSize).clip(CircleShape)
                                 .background(MatuleTheme.colors.placeholder)
                         )
-                        SpacerW(6)
+                        SpacerW(Dimensions.CardPadding)
                         Text(
                             state,
                             maxLines = 1,
@@ -103,7 +104,7 @@ fun OrderCardOpen(number: String, cost: String, date: String, state: String, onC
                         contentDescription = null,
                         tint = MatuleTheme.colors.placeholder
                     )
-                    SpacerW(8)
+                    SpacerW(Dimensions.SmallSpacing)
                     Text(
                         "Посмотреть",
                         style = createMatuleTypography().headlineRegular,
@@ -113,36 +114,36 @@ fun OrderCardOpen(number: String, cost: String, date: String, state: String, onC
 
 
             }
-            Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(MatuleTheme.colors.placeholder))
+            Box(modifier = Modifier.fillMaxWidth().height(Dimensions.SmallBorder).background(MatuleTheme.colors.placeholder))
 
-            Column(Modifier.fillMaxWidth().padding(16.dp).height(277.dp))
+            Column(Modifier.fillMaxWidth().padding(Dimensions.MediumPadding).height(Dimensions.ColumnHeight))
             {
                 Text(
                     "Описание",
                     style = createMatuleTypography().headlineMedium,
                     color = MatuleTheme.colors.placeholder
                 )
-                SpacerH(16)
+                SpacerH(Dimensions.MediumSpacing)
 
-                LazyColumn(modifier = Modifier.height(88.dp)) {
+                LazyColumn(modifier = Modifier.height(Dimensions.BottomBarSpacing)) {
                     items(listOrder){
                         ListOrderItem(it)
                     }
                 }
 
-                SpacerH(22)
+                SpacerH(Dimensions.ExtraMediumSpacing)
 
-                Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(MatuleTheme.colors.placeholder))
-                SpacerH(22)
+                Box(modifier = Modifier.fillMaxWidth().height(Dimensions.SmallBorder).background(MatuleTheme.colors.placeholder))
+                SpacerH(Dimensions.ExtraMediumSpacing)
 
                 Row(modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween) {
 
-                    ButtonChips("Чек покупки", {checkClick()}, false, width = 144)
+                    ButtonChips("Чек покупки", {checkClick()}, false, width = Dimensions.ChipsWidth)
 
-                    ButtonChips("Помощь", {help()}, false, width = 144)
+                    ButtonChips("Помощь", {help()}, false, width = Dimensions.ChipsWidth)
                 }
-                SpacerH(16)
+                SpacerH(Dimensions.MediumPadding)
                 ButtonMedium("Закрыть",{exit()}, true, false)
 
             }

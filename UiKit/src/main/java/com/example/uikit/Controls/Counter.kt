@@ -17,6 +17,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.uikit.R
+import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.MatuleTheme
 
 @Composable
@@ -24,11 +25,11 @@ fun Counter(count:Int, onClick:(Int) -> Unit){
     var color = MatuleTheme.colors
     Row(
         Modifier
-            .width(64.dp)
-            .height(32.dp)
-            .clip(RoundedCornerShape(8.dp))
+            .width(Dimensions.BoxWidth)
+            .height(Dimensions.BoxHeight)
+            .clip(RoundedCornerShape(Dimensions.SmallRounded))
             .background(color.surface)
-            .padding(6.dp),
+            .padding(Dimensions.CardPadding),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
