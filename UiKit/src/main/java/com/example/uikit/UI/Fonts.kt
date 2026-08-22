@@ -9,6 +9,7 @@ import com.example.uikit.R
 
 
 data class MatuleTypography(
+    val title1: TextStyle,
     val title1Semibold: TextStyle,
     val title1Heavy: TextStyle,
     val title2Regular: TextStyle,
@@ -42,6 +43,7 @@ fun createMatuleTypography(): MatuleTypography {
 
     return MatuleTypography(
         title1Semibold = textStyle(R.font.semibold, 24, 28, 0.33f),
+        title1 = textStyle(R.font.heavy, 40, 42, 0.33f),
         title1Heavy = textStyle(R.font.heavy, 24, 28, 0.33f),
         title2Regular = textStyle(R.font.regular, 20, 28, 0.38f),
         title2Semibold = textStyle(R.font.semibold, 20, 28, 0.38f),

@@ -35,15 +35,18 @@ object Dimensions {
     val SmallLargePadding = 23.dp
     val LargePaddingPlus = 26.dp
     val ExtraLargePadding = 34.dp
+    val BigPadding = 103.dp
 
     //Spacing
     val ExtraSmallSpacing = 4.dp
     val SmallSpacing = 8.dp
     val MediumSpacing = 16.dp
+
     val ExtraMediumSpacing = 22.dp
     val LargeSpacing = 24.dp
     val ExtraLargeSpacing = 32.dp
     val BigSpacing = 40.dp
+    val ExtraBigSpacing = 72.dp
 
     //IconSize
     val IconSmall = 16.dp
@@ -65,10 +68,13 @@ object Dimensions {
     val HeightCardMin = 116.dp
 
     val BottomBarSpacing = 88.dp
+    val TopBarSpacing = 72.dp
 
     //Row
+
     val RowHeight = 40.dp
     val LargeRowHeight = 48.dp
+    val ExtraLargeRowHeight = 64.dp
 
     val RowWidth = 265.dp
     val SmallRowWidth = 177.dp
@@ -88,6 +94,6 @@ object Dimensions {
 
     //
     val fillMaxWidth = 0.8f
-    val SmallfillMaxWidth = 0.8f
+    val SmallfillMaxWidth = 0.7f
 
 }
